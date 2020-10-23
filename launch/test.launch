@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+   <arg name="x_pos2" default="2"/>
+  <arg name="y_pos2" default="2"/>
+  <arg name="z_pos2" default="0.0"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find agrotech)/urdf/agrotech.xacro" />
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model robot2 -x $(arg x_pos2) -y $(arg y_pos2) -z $(arg z_pos2) -param robot_description" />
+
+    <rosparam command="load"
+            file="$(find agrotech)/config/drive.yaml"
+            ns="diff_drive_controller2" />
+
+  <rosparam command="load"
+            file="$(find agrotech)/config/gimbal.yaml"
+            ns="gimbal_controller2" />
+
+  <node name="controller_spawner2" pkg="controller_manager" type="spawner"
+    args="diff_drive_controller2
+       gimbal_controller2"/>
+</launch>

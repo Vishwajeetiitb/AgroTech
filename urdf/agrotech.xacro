@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="agrotech" xmlns:xacro="https://www.ros.org/wiki/xacro" >
+   <xacro:include filename="$(find agrotech)/urdf/gazebo.xacro" />
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0278144086012687 -0.0466302007370476 0.0746205848081645"
+        rpy="0 0 0" />
+      <mass
+        value="2.43388412546145" />
+      <inertia
+        ixx="0.127933662055774"
+        ixy="1.11817455412393E-13"
+        ixz="7.51434901028233E-22"
+        iyy="0.0719772644881071"
+        iyz="7.83297418163838E-18"
+        izz="0.199892695922271" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="servo1">
+    <inertial>
+      <origin
+        xyz="-1.54227759036063E-13 -0.0152868337606683 0.000551204936858479"
+        rpy="0 0 0" />
+      <mass
+        value="0.0303271186946437" />
+      <inertia
+        ixx="7.28536670103264E-06"
+        ixy="-1.09037758261216E-17"
+        ixz="3.84839280818097E-18"
+        iyy="4.96635932119684E-06"
+        iyz="1.31875888200491E-07"
+        izz="4.20230574068574E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/servo1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/servo1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="servo1"
+    type="fixed">
+    <origin
+      xyz="-0.0278144086012686 0.00345136739364775 0.0953454730961518"
+      rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="servo1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="gimbal1">
+    <inertial>
+      <origin
+        xyz="0.0047842713515303 -1.46505552281995E-05 0.00668625706028879"
+        rpy="0 0 0" />
+      <mass
+        value="0.0146312085277861" />
+      <inertia
+        ixx="4.64051174557552E-06"
+        ixy="-1.23127593070161E-09"
+        ixz="-9.31957636179444E-07"
+        iyy="4.23843122166083E-06"
+        iyz="2.85387174264428E-09"
+        izz="6.34329608825593E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/gimbal1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/gimbal1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gimbal1"
+    type="revolute">
+    <origin
+      xyz="0 -0.0358999999999998 0.01"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="servo1" />
+    <child
+      link="gimbal1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="servo2">
+    <inertial>
+      <origin
+        xyz="-1.53807522274008E-13 0.0152884523412999 -0.000505921829480263"
+        rpy="0 0 0" />
+      <mass
+        value="0.0303271186946223" />
+      <inertia
+        ixx="7.28536670103263E-06"
+        ixy="1.09138595401051E-17"
+        ixz="-3.82259101575566E-18"
+        iyy="4.96554449461614E-06"
+        iyz="1.34213103357257E-07"
+        izz="4.20312056726643E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/servo2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/servo2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="servo2"
+    type="fixed">
+    <origin
+      xyz="-0.000500000000000417 0 0.0200000000000006"
+      rpy="1.5707963267949 1.5707963267949 0" />
+    <parent
+      link="gimbal1" />
+    <child
+      link="servo2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="gimbal2">
+    <inertial>
+      <origin
+        xyz="0.00756573125404989 0 0.00664188890564304"
+        rpy="0 0 0" />
+      <mass
+        value="0.00396592924888974" />
+      <inertia
+        ixx="3.72276371248275E-07"
+        ixy="-3.58918837665587E-23"
+        ixz="-1.17696841768386E-07"
+        iyy="4.43534060484544E-07"
+        iyz="-1.65436122510606E-24"
+        izz="3.65712778202683E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/gimbal2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/gimbal2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gimbal2"
+    type="revolute">
+    <origin
+      xyz="0 0.0359306906417623 -0.00989154984420124"
+      rpy="3.10302512335118 -0.00306222376575281 1.57079632679491" />
+    <parent
+      link="servo2" />
+    <child
+      link="gimbal2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="nozzle">
+    <inertial>
+      <origin
+        xyz="2.08166817117217E-17 0.0164934476324591 3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.00299063507754682" />
+      <inertia
+        ixx="2.40869236298093E-07"
+        ixy="-6.26589314008918E-23"
+        ixz="5.61901205167857E-24"
+        iyy="4.80071134345321E-08"
+        iyz="-7.16028217741215E-24"
+        izz="2.40869236298093E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/nozzle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.517647058823529 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/nozzle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="nozzle"
+    type="continuous">
+    <origin
+      xyz="0.014999765570373 0 0"
+      rpy="1.5707963267949 0 -1.49068178771826" />
+    <parent
+      link="gimbal2" />
+    <child
+      link="nozzle" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left front pipe">
+    <inertial>
+      <origin
+        xyz="3.22783522133108E-10 -0.164991490690961 -0.00241370094081267"
+        rpy="0 0 0" />
+      <mass
+        value="0.131831663458726" />
+      <inertia
+        ixx="0.00185675866576065"
+        ixy="5.72364909923268E-12"
+        ixz="-8.34100748583519E-13"
+        iyy="2.39248351730733E-05"
+        iyz="3.48608685778335E-06"
+        izz="0.00185559184267335" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left front pipe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left front pipe.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left front pipe"
+    type="fixed">
+    <origin
+      xyz="-0.277814408601269 0.303451367393648 -0.429654526903848"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="left front pipe" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left front motor">
+    <inertial>
+      <origin
+        xyz="0.0264217879651259 -0.000228267939510529 -1.3413437027765E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.053387038279178" />
+      <inertia
+        ixx="7.29093828416783E-06"
+        ixy="-4.02022790168304E-07"
+        ixz="-1.26622678057816E-14"
+        iyy="2.23213074160553E-05"
+        iyz="-2.2442903436181E-14"
+        izz="2.23721496312344E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left front motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left front motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left front motor"
+    type="fixed">
+    <origin
+      xyz="0 0.0299999999999997 -0.0194999999999989"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="left front pipe" />
+    <child
+      link="left front motor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left front wheel">
+    <inertial>
+      <origin
+        xyz="3.05311331771918E-16 -1.88737914186277E-15 0.043586562879544"
+        rpy="0 0 0" />
+      <mass
+        value="1.89335281832218" />
+      <inertia
+        ixx="0.00776519925463663"
+        ixy="-8.23993651088983E-18"
+        ixz="-5.94277850644407E-18"
+        iyy="0.00776519925463662"
+        iyz="7.1192312114174E-18"
+        izz="0.0138316054368445" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left front wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left front wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lfw"
+    type="continuous">
+    <origin
+      xyz="-0.0100000000000037 -0.00649519052838332 0"
+      rpy="-1.57079632679489 1.04719755119658 1.5707963267949" />
+    <parent
+      link="left front motor" />
+    <child
+      link="left front wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right front pipe">
+    <inertial>
+      <origin
+        xyz="3.22783522133108E-10 0.164991490690961 0.00241370094081264"
+        rpy="0 0 0" />
+      <mass
+        value="0.131831663458726" />
+      <inertia
+        ixx="0.00185675866576065"
+        ixy="-5.72364912202251E-12"
+        ixz="8.34100764832238E-13"
+        iyy="2.39248351730733E-05"
+        iyz="3.48608685778339E-06"
+        izz="0.00185559184267334" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right front pipe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right front pipe.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right front pipe"
+    type="fixed">
+    <origin
+      xyz="0.222185591398731 0.303451367393648 -0.429654526903848"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="right front pipe" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right front motor">
+    <inertial>
+      <origin
+        xyz="0.0264217879515924 -0.000228267939711868 -9.5179975012627E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.0533870382521696" />
+      <inertia
+        ixx="7.29093828243882E-06"
+        ixy="-4.02022789875224E-07"
+        ixz="-1.87994171508719E-14"
+        iyy="2.23213073922716E-05"
+        iyz="-2.25352070837943E-14"
+        izz="2.23721496091015E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right front motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right front motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right front motor"
+    type="fixed">
+    <origin
+      xyz="0 -0.0299999999999997 0.0194999999999989"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="right front pipe" />
+    <child
+      link="right front motor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right front wheel">
+    <inertial>
+      <origin
+        xyz="2.83106871279415E-15 -1.4432899320127E-15 0.0435865628795447"
+        rpy="0 0 0" />
+      <mass
+        value="1.89335281832219" />
+      <inertia
+        ixx="0.00776519925463658"
+        ixy="2.01661604082304E-17"
+        ixz="7.96532598410714E-18"
+        iyy="0.0077651992546366"
+        iyz="-1.58134447185523E-17"
+        izz="0.0138316054368444" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right front wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right front wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rfw"
+    type="continuous">
+    <origin
+      xyz="-0.0100000000000003 -0.00649519052838221 0"
+      rpy="-1.5707963267949 -0.569567224695743 1.5707963267949" />
+    <parent
+      link="right front motor" />
+    <child
+      link="right front wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left back pipe">
+    <inertial>
+      <origin
+        xyz="3.22783522133108E-10 -0.164991490690962 -0.00241370094081261"
+        rpy="0 0 0" />
+      <mass
+        value="0.131831663458729" />
+      <inertia
+        ixx="0.00185675866576068"
+        ixy="5.72364910366452E-12"
+        ixz="-8.34100756674332E-13"
+        iyy="2.39248351730735E-05"
+        iyz="3.48608685778292E-06"
+        izz="0.00185559184267337" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left back pipe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left back pipe.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left back pipe"
+    type="fixed">
+    <origin
+      xyz="-0.277814408601269 -0.396548632606352 -0.429654526903848"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="left back pipe" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left back motor">
+    <inertial>
+      <origin
+        xyz="0.0264217879651259 -0.000228267939510585 -1.34133260054625E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.0533870382791781" />
+      <inertia
+        ixx="7.29093828416783E-06"
+        ixy="-4.02022790168306E-07"
+        ixz="-1.26622815231952E-14"
+        iyy="2.23213074160553E-05"
+        iyz="-2.24429036536414E-14"
+        izz="2.23721496312344E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left back motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left back motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left back motor"
+    type="fixed">
+    <origin
+      xyz="0 0.0299999999999997 -0.0194999999999989"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="left back pipe" />
+    <child
+      link="left back motor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left back wheel">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 -8.88178419700125E-16 0.0435865628795442"
+        rpy="0 0 0" />
+      <mass
+        value="1.89335281832218" />
+      <inertia
+        ixx="0.0077651992546366"
+        ixy="1.06251812903579E-17"
+        ixz="-8.46455277457366E-18"
+        iyy="0.00776519925463665"
+        iyz="3.69962513547547E-18"
+        izz="0.0138316054368445" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left back wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/left back wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lbw"
+    type="continuous">
+    <origin
+      xyz="-0.0100000000000011 -0.00649519052838338 0"
+      rpy="-1.57079632679489 1.04719755119658 1.5707963267949" />
+    <parent
+      link="left back motor" />
+    <child
+      link="left back wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right back pipe">
+    <inertial>
+      <origin
+        xyz="3.22783522133108E-10 0.164991490690961 0.00241370094081267"
+        rpy="0 0 0" />
+      <mass
+        value="0.131831663458726" />
+      <inertia
+        ixx="0.00185675866576065"
+        ixy="-5.72364911135957E-12"
+        ixz="8.3410077248158E-13"
+        iyy="2.39248351730733E-05"
+        iyz="3.48608685778352E-06"
+        izz="0.00185559184267334" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right back pipe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right back pipe.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right back pipe"
+    type="fixed">
+    <origin
+      xyz="0.222185591398731 -0.396548632606352 -0.429654526903848"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="right back pipe" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right back motor">
+    <inertial>
+      <origin
+        xyz="0.026421787965126 -0.000228267939510474 -1.34134925389162E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.053387038279178" />
+      <inertia
+        ixx="7.29093828416782E-06"
+        ixy="-4.02022790168306E-07"
+        ixz="-1.2662220071346E-14"
+        iyy="2.23213074160553E-05"
+        iyz="-2.24429019950917E-14"
+        izz="2.23721496312344E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right back motor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right back motor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right back motor"
+    type="fixed">
+    <origin
+      xyz="0 -0.0299999999999997 0.0194999999999989"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="right back pipe" />
+    <child
+      link="right back motor" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right back wheel">
+    <inertial>
+      <origin
+        xyz="-1.60982338570648E-15 -4.55191440096314E-15 0.0435865628795449"
+        rpy="0 0 0" />
+      <mass
+        value="1.89335281832219" />
+      <inertia
+        ixx="0.00776519925463665"
+        ixy="2.38524477946811E-18"
+        ixz="-9.33520901043807E-18"
+        iyy="0.00776519925463668"
+        iyz="-5.00019886750444E-18"
+        izz="0.0138316054368446" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right back wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/right back wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rbw"
+    type="continuous">
+    <origin
+      xyz="-0.0100000000000002 -0.00649519052838465 0"
+      rpy="-1.5707963267949 1.30742603585954 1.5707963267949" />
+    <parent
+      link="right back motor" />
+    <child
+      link="right back wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="-0.0183711346169749 0.0132451872449256 0.0301678166575592"
+        rpy="0 0 0" />
+      <mass
+        value="0.0656540263728923" />
+      <inertia
+        ixx="3.4747240496673E-05"
+        ixy="1.17396537554552E-09"
+        ixz="-2.4434109882953E-07"
+        iyy="3.61718075908338E-05"
+        iyz="-2.80139330174697E-09"
+        izz="7.72362608669499E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agrotech/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera joint"
+    type="fixed">
+    <origin
+      xyz="0.0 -0.076 0.057345"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  <link
+    name="Dummycamera">  
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <!-- <box size="0.02 0.02 0.02"/> -->
+      </geometry>
+    </visual>
+    <collision>
+      <box size="0.02 0.02 0.02"/>
+    </collision>
+  </link>
+  <joint
+    name="Dummycamera joint"
+    type="fixed">
+    <origin
+      xyz="-0.03 -0.07 0.02"
+      rpy="0 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Dummycamera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+ <transmission name="left front wheel trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="left front wheel motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="lfw">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+   <transmission name="right front wheel trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="right front wheel motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="rfw">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+<transmission name="left back wheel trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="left back wheel motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="lbw">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+   <transmission name="right back wheel trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="right back wheel motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="rbw">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+
+
+<transmission name="gimbal1_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <actuator name="gimbal1_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+  <joint name="gimbal1">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+</transmission>
+
+<transmission name="gimbal2_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <actuator name="gimbal2_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+  <joint name="gimbal2">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+</transmission>
+
+
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/</robotNamespace>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_link</robotBaseFrame>
+  </plugin>
+</gazebo>
+</robot>

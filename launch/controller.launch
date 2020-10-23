@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+ <!--  <include file="$(find main3)/launch/gazebo.launch">
+  </include> -->
+  <rosparam command="load"
+            file="$(find agrotech)/config/drive.yaml"
+            ns="diff_drive_controller" />
+
+  <rosparam command="load"
+            file="$(find agrotech)/config/gimbal.yaml"
+            ns="gimbal_controller" />
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+    args="diff_drive_controller
+    	 gimbal_controller"/>
+  
+<!-- 
+  <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
+    <param name="default_topic" value="/r2d2_diff_drive_controller/cmd_vel"/> -->
+  <!-- </node> -->
+</launch>
